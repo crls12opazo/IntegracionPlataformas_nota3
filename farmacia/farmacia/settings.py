@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'farmacia.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bgtbqpjsmro00w8m1pkx',
+        'USER': 'u5gv3e9ilucut3x4',
+        'PASSWORD': 'TUbePw4JDGqudmwv5MD4',
+        'HOST': 'bgtbqpjsmro00w8m1pkx-mysql.services.clever-cloud.com',
+        'PORT': '3306',
     }
 }
 
