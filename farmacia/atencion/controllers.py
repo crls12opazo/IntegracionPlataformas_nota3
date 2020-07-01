@@ -19,6 +19,13 @@ class controllerAtencion:
         except Exception as inst:
             message="Ha ocurrido un error , no se han guardado los datos." + str(inst)
         return message
+    def ReturnAtenciones():
+        atenciones=Atencion.objects.all()
+        return atenciones
+    def DeleteAtencion(id):
+        Atencion.objects.filter(id=id).delete()
+        messageDelete="Registro Eliminado"
+        return messageDelete
     
     
 

@@ -30,17 +30,12 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Iniciar atención</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-                  
+                    <i class="fas fa-minus"></i></button>                  
                 </div>
               </div>
               <div class="card-body">
-              
-
-
                 <div class="row">
                   <div class="col-md-4">
                 <div class="card card-primary">
@@ -125,11 +120,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
-
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
@@ -137,13 +127,78 @@
               </div>
               <!-- /.card-footer-->
             </div>
+            <!--tabla-->
+
+
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Atenciones realizadas</h3>
+                
+                <div class="card-tools">
+                  
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i></button>                  
+                </div>
+              </div>
+              
+               
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0" style="height: 300px;">
+                  <table class="table table-head-fixed text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Rut Medico</th>
+                        <th>Nombre Medico</th>
+                        <th>Rut Paciente</th>
+                        <th>Nombre Paciente</th>  
+                        <th>Fecha atencion</th>     
+                        <th>Consulta</th>
+                        <th>Procedimiento</th>
+                        <th>Receta</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for x in atenciones %} 
+                      <tr>
+                        <td>{{ x.id_atencion}}</td>
+                        <td>{{ x.rut_medico }}</td>
+                        <td>{{ x.nombre_medico }}</td>
+                        <td>{{ x.rut_paciente }}</td>
+                        <td>{{ x.nombre_paciente }}</td>
+                        <td>{{ x.fecha_atencion }}</td>
+                        <td>{{ x.consulta }}</td>
+                        <td>{{ x.procedimiento }}</td>
+                        <td>{{ x.receta }}</td>
+                        <td><button class="btn btn-danger"><i class="fas fa-window-close"></i></button>
+                            <button class="btn btn-success"><i class="fas fa-pen-alt"></i></button>
+                            <button class="btn btn-secondary"><i class="fas fa-print"></i></button>
+                        </td>fas fa-pen-alt
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+            
+              <!-- /.card -->
+                  
+                </div>
+              </div>
+            </div>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                
+              </div>
+              <!-- /.card-footer-->
+            </div>
+
             <!-- /.card -->
           </div>
-        </div>
-
-
-   
-    
+        </div>    
     </div>
       </div><!-- /.container-fluid -->
     </section>

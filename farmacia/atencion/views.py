@@ -8,7 +8,8 @@ def atencion(request):
     if request.method == 'GET':
         form=formularioAtencion()
         hola = 'hola'
-        context={'form':formularioAtencion,'message':hola}
+        atenciones=controllerAtencion.ReturnAtenciones()
+        context={'form':formularioAtencion,'message':hola,'atenciones':atenciones}
         return render(request,'atencion.html',context)
     if request.method=='POST':
         form=formularioAtencion()
@@ -21,7 +22,8 @@ def atencion(request):
         procedimiento=request.POST['procedimiento']
         receta=request.POST['receta']
         message= controllerAtencion.SaveAtencion(rutMedico,nombreMedico,rutPaciente,nombrePaciente,fecha,consulta,procedimiento,receta)
-        context={'form':formularioAtencion,'message':message}
+        atenciones=controllerAtencion.ReturnAtenciones()
+        context={'form':formularioAtencion,'message':message,'atenciones':atenciones}
         return render(request,'atencion.html',context)
 
             
